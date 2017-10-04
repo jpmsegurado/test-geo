@@ -7,6 +7,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { BackgroundGeolocation, BackgroundGeolocationConfig, BackgroundGeolocationResponse } from '@ionic-native/background-geolocation';
+import { OccurrenceProvider } from '../providers/occurrence/occurrence';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -24,7 +27,9 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    BackgroundGeolocation,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    OccurrenceProvider
   ]
 })
 export class AppModule {}
